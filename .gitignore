@@ -1,0 +1,101 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+
+
+
+<StripeCheckout
+                  ref={stripe}
+                  stripeKey={
+                    "pk_test_51MSfb7AYca0qJ0qztPjeMucdFFD03Hmnjrmbf71wlDGxxQ0GBf6Yrei25aEGOPO2gLkEGkiOlTIoMAamIKzXILoQ00fZEGh1w2"
+                  }
+                  token={async (token) => {
+                    try {
+                      Swal.fire(
+                        "Please wait...",
+                        "We are validating your transaction",
+                        "info"
+                      );
+                      const output = await change("buynow/payment", {
+                        body: {
+                          amount: +item.price,
+                          token: token.id,
+                          email: currentUser?.success?.data?.email,
+                        },
+                      });
+                      if (output.status !== 200) {
+                        Swal.fire(
+                          "Error",
+                          output?.results?.error?.message ||
+                            "Unable to pay the price. Please try again",
+                          "error"
+                        );
+                        return;
+                      }
+                      const results = await change("buynow/create", {
+                        body: {
+                          university: currentUser?.success.data._id,
+                          subscription: item._id,
+                        },
+                      });
+                      if (results.status !== 200) {
+                        Swal.fire(
+                          "Error",
+                          results?.results?.error?.message ||
+                            "Unable to update",
+                          "error"
+                        );
+                        return;
+                      }
+                      await refetchUser();
+                      Swal.fire(
+                        `Success`,
+                        `Subscription Taken Successfully!`,
+                        "success"
+                      );
+                    } catch (error) {
+                      console.log(error);
+                    }
+                  }}
+                  amount={+item.price * 100}
+                  email={currentUser?.success?.data?.email}
+                  name={`Subscribe For ${item.title}`}
+                  alipay={true}
+                />
+
+
+                

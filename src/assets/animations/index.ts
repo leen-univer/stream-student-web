@@ -1,0 +1,11 @@
+export { default as LOADER } from "./loader.json";
+export { default as EMPTY } from "./empty.json";
+export { default as NOTIFICATION } from "./notification.json";
+export { default as CLASS2 } from "./classes2.json";
+export { default as REVIEW } from "./review.json";
+export { default as COURSE } from "./course.json";
+export { default as LECTURE } from "./lecture.json";
+export { default as ASSIGNMENT } from "./assignment.json";
+export { default as CERTIFICATE } from "./certificate.json";
+export { default as LOADING } from "./loading.json";
+export { default as CART } from "./cart.json";
