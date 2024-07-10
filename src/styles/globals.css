@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*//? scrolling css */
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #026668 transparent;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 0.2em;
+  height: 0.2em;
+}
+::-webkit-scrollbar-thumb {
+  background: #026668;
+  border-radius: 10em;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+*:disabled {
+  cursor: not-allowed;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  color: black;
+  font-family: "Tajawal", sans-serif;
+  scroll-behavior: smooth !important;
+}
+
+@layer components {
+  .main-container {
+    @apply container mx-auto px-4 md:px-6 lg:px-8;
+  }
+  .title-styling {
+    @apply text-2xl md:text-3xl lg:text-4xl tracking-wide font-bold;
+  }
+  .description-styling {
+    @apply text-sm md:text-base tracking-wider font-medium;
+  }
+  .common-transition {
+    @apply transition-all duration-300 ease-in-out !important;
+  }
+  .btn-primary {
+    @apply bg-primary/10 text-primary border border-primary font-medium tracking-wide rounded-[30px] hover:bg-[rgb(2_102_104/0.15)] common-transition;
+  }
+  .btn-secondary {
+    @apply bg-primary text-white rounded-[30px];
+  }
+  .button-valid-state {
+    @apply !bg-primary;
+  }
+  .button-disabled-state {
+    @apply !bg-gray-400;
+  }
+}
+
+.my-slick .slick-track {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.angle {
+  background-color: transparent;
+  background-image: linear-gradient(90deg, #cd2525 33%, #25cd7c 0%);
+}
+
+.bg-new {
+  background-image: linear-gradient(45deg, #ffffff 40%, #dec992 40%);
+}
+.bg-animate {
+  animation: expand 4s ease-in-out;
+}
+@keyframes expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* .category-div {
+  
+} */
+.sub-category-div {
+  display: hidden;
+}
+
+.category-div:hover .sub-category-div {
+  display: flex !important;
+}
+
+/* //? nprogress css */
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background-image: linear-gradient(to right, #026668, #fba100);
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #f6f5f5, 0 0 5px #f6f5f5;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border: solid 2px transparent;
+  border-top-color: #026668;
+  border-left-color: #fba100;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
+
+.custom-animate-pulse {
+  animation: pulse 1.5s infinite;
+  background-color: rgba(26, 209, 50, 0.589); 
+  border: 1px solid ;
+  box-shadow: 0 0 10px rgba(8, 226, 55, 1);
+  color : white;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}

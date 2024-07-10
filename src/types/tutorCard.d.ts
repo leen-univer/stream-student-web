@@ -1,0 +1,31 @@
+export interface TutorDataType {
+  _id?: string;
+  image?: string;
+  fullName?: string;
+  subject?: string;
+  designation?: string;
+  description?: string;
+  posts?: string;
+  rating?: string;
+  phone?: number;
+  blockStatus?: string;
+  name?: string;
+  expertiseInSubject?: string;
+  country?: { label?: string };
+  yearOfExperience?: number;
+  email?: string;
+  profileUrl?: string;
+  howMuch?: number;
+  methods?: string;
+  createdAt?: string;
+  phoneNumber?: number;
+  total?: number;
+  totalClassSale?: number;
+  totalCourseSale?: number;
+  totalSales?: number;
+  ssCommission?: number;
+  ssCommissionNumber?: number;
+  tutorPayOut?: number;
+  payingAmount?: number;
+  reamingBalance?: number;
+}
