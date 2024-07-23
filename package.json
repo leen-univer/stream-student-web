@@ -2,6 +2,8 @@
   "name": "searchyardproject",
   "version": "0.1.0",
   "private": true,
+  "description": "A brief description of your project.",
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -27,6 +29,7 @@
     "formik": "^2.2.9",
     "framer-motion": "^10.2.3",
     "jspdf-autotable": "^3.6.0",
+    "lottie-react": "^2.4.0",
     "next": "13.2.1",
     "nprogress": "^0.2.0",
     "react": "18.2.0",
@@ -34,7 +37,7 @@
     "react-countup": "6.3.0",
     "react-csv": "^2.2.2",
     "react-dom": "18.2.0",
-    "react-lottie": "^1.2.3",
+    "react-lottie": "^1.2.4",
     "react-quill": "^2.0.0",
     "react-stripe-checkout": "^2.6.3",
     "react-toastify": "^9.1.3",
