@@ -2,8 +2,11 @@
   "name": "searchyardproject",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "description": "A brief description of your project.",
 
+=======
+>>>>>>> 84fd8445cfe2246145b691a3af7cde1bf721518d
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -29,7 +32,10 @@
     "formik": "^2.2.9",
     "framer-motion": "^10.2.3",
     "jspdf-autotable": "^3.6.0",
+<<<<<<< HEAD
     "lottie-react": "^2.4.0",
+=======
+>>>>>>> 84fd8445cfe2246145b691a3af7cde1bf721518d
     "next": "13.2.1",
     "nprogress": "^0.2.0",
     "react": "18.2.0",
