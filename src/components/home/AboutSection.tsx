@@ -39,9 +39,9 @@ const AboutSection = () => {
   ];
 
   return (
-    <article className="main-container pb-10 md:pb-20">
-      <section className="bg-gradient-to-r from-primary to-primary/80 rounded-xl">
-        <aside className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+    <article className="about-section main-container pb-10 md:pb-20">
+      <section className="about-cards">
+        <aside className="flex">
           {ABOUT_FEATURE_ARR.map((item: AboutFeatureArrType, index: number) => (
             <AboutCard
               key={item._id}
@@ -63,15 +63,11 @@ const AboutCard = ({
   isLastIndex: boolean;
 }) => {
   return (
-    <article
-      className={`group common-transition ${
-        isLastIndex
-          ? ""
-          : "border-b md:border-b-0 lg:border-r border-gray-200 hover:border-transparent"
-      }`}
-    >
-      <div className="h-full flex flex-col gap-4 text-white tracking-wide rounded-xl p-10 2xl:p-12 common-transition group-hover:bg-slate-900 group-hover:-translate-y-6 group-hover:scale-105 group-hover:shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
-        <img className="w-12" src={item.image} alt="abstract-icon" />
+    <article className="cards-container group common-transition">
+      <div className="about-card">
+        <div className="img">
+          <img className="w-12" src={item.image} alt="abstract-icon" />
+        </div>
         <h4 className="font-semibold text-lg">{item.title}</h4>
         <p className="text-gray-100">{item.description}</p>
       </div>

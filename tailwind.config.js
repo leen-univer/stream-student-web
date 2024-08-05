@@ -10,7 +10,9 @@ module.exports = {
       colors: {
         // primary: "#026668",
         // secondary: "#fba100",
-        primary: "#0e0e66",
+        // primary: "#0e0e66",
+        primary: "#01A0EB",
+        accent: "#EDF9FF",
         secondary: "#00ADEC",
         facebook: "#3b5998",
         twitter: "#00acee",

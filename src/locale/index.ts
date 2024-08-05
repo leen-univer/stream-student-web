@@ -9,19 +9,21 @@ export const navbarMenu = (lang: LanguageType) => {
       Register: "Register",
       Login: "Login",
       Tutor: "Tutor",
+      home: "Home",
       Courses: "Courses",
       testYourKnowledge: "Test Your Knowledge",
       MyAccount: "My Account",
-      placeholder: "Type Courses...",
+      placeholder: "What do you want learn...",
     },
     ar: {
       MyAccount: "حسابي",
       Register: "يسجل",
       Login: "تسجيل الدخول",
       Tutor: "مدرس خاص",
+      home: "الرئيسية",
       Courses: "الدورات",
       testYourKnowledge: "اختبر معلوماتك",
-      placeholder: "اكتب الدورات ...",
+      placeholder: "ماذا تريد أن تتعلم...",
     },
   };
   return CONTENT[lang];
