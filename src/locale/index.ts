@@ -35,21 +35,19 @@ export const heroContent = (lang: LanguageType) => {
     en: {
       heroTitle: "Make Your Dream Career With",
       highlightedText: "Stream Student",
-      heroDescription:
-        "Learn and study your lessons from home by enrolling in various lessons.",
+      heroDescription:"Learn and study your lessons from home by enrolling in various lessons.",
       testPageTitle: "Elevate Your Knowledge with Engaging Quizzes",
       testPagehighlightedText: "and Assessments",
-      testPageDesc:
-        "Challenge yourself with our thoughtfully crafted quizzes covering a wide range of topics. Reinforce your learning, identify areas for improvement, and enhance your understanding through interactive assessments.",
+      testPageDesc:"Challenge yourself with our thoughtfully crafted quizzes covering a wide range of topics. Reinforce your learning, identify areas for improvement, and enhance your understanding through interactive assessments.",
       testPageQuizSecTitle: "Now Test Your Knowledge!",
-      testPageQuizSecDesc:
-        "Choose a quiz below and dive into a rewarding learning experience. Test your comprehension, critical thinking, and problem-solving skills. Unleash your potential and discover new insights through our dynamic quizzes.",
+      testPageQuizSecDesc:"Choose a quiz below and dive into a rewarding learning experience. Test your comprehension, critical thinking, and problem-solving skills. Unleash your potential and discover new insights through our dynamic quizzes.",
+      getStarted: "Get Started",
     },
     ar: {
       heroTitle: "اجعل مهنة أحلامك مع",
       highlightedText: "تيار الطالب",
       heroDescription:
-        "تعلم ودراسة دروسك من المنزل من خلال التسجيل في دروس مختلفة.",
+        "تعلم و ادرس دروسك من المنزل من خلال التسجيل في دروس مختلفة.",
       testPageTitle: "ارتقِ بمعرفتك من خلال اختبارات شيقة",
       testPagehighlightedText: "وتقييمات",
       testPageDesc:
@@ -57,6 +55,7 @@ export const heroContent = (lang: LanguageType) => {
       testPageQuizSecTitle: "الآن اختبر معرفتك!",
       testPageQuizSecDesc:
         "اختر اختبارًا أدناه وانغمس في تجربة تعلُّم مجزية. اختبر فهمك، ومهارات التفكير النقدي، ومهارات حل المشكلات. أطلِق إمكانياتك واكتشف رؤى جديدة من خلال اختباراتنا الديناميكية.",
+      getStarted: "ابدأ الآن",
     },
   };
   return CONTENT[lang];

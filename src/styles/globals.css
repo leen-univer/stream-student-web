@@ -487,12 +487,15 @@ body {
 
 
 /* hero section ******************************************************************************************************/
+.hero-content-container{
+  height: max(426px , 70vh);
+}
 
 .hero-video-container {
   position: absolute;
   width: 100%;
   margin: 0;
-  height: 90vh;
+  height: max(550px , 100vh);
   overflow: hidden;
   padding: 0;
   top: 0;
@@ -502,18 +505,6 @@ body {
 .hero-video {
   filter: brightness(0.5);
 }
-
-/* .hero-video-container::after{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  opacity: 0.5;
-  content: "";
-  background-color: var(--primary-dark-color);
-} */
 
 .hero-content {
   color: white;
@@ -561,16 +552,9 @@ body {
 
 
 
-
-
-
-
-
-
-
 @media  (max-width: 1024px) {
   html{
-    width: 103%;
+    width: 100%;
       /*til I find the real problem*/
     }
     
@@ -627,6 +611,14 @@ body {
 
 
 
+
+@media  (max-width: 1024px) {
+  .about-cards>aside{
+    gap: 20px;
+  }
+
+
+}
 
 @media  (max-width: 768px) {
 
