@@ -160,16 +160,22 @@ export const profileSectionContent = (lang: LanguageType) => {
 export const careerContent = (lang: LanguageType) => {
   const CONTENT = {
     en: {
+      reserveYourSpot: "Reserve Your Spot Now!",
       careerTitle: "Reserve your spot",
       careerDescription:
         "Learn with StreamStudent and start your career in reaching success and focus on honing your skills",
       GetStartedButton: "Get started",
+      reserveYourSpotDescription: "Learn with StreamStudent and start your career in reaching success and focus on honing your skills Learn with StreamStudent and start your career in reaching success and focus on honing your skillsLearn with StreamStudent and start your career in reaching success and focus on honing your skills",
+      joinTheFamily: "Join the family", 
     },
     ar: {
+      reserveYourSpot: "احجز مكانك الان",
       careerTitle: "احجز مكانك",
       careerDescription:
         "تعلم مع Streamstudent وابدأ حياتك المهنية في الوصول إلى النجاح والتركيز على شحذ مهاراتك",
       GetStartedButton: "البدء",
+      reserveYourSpotDescription: "تعلم مع StreamStudent وابدأ مسيرتك المهنية في الوصول إلى النجاح والتركيز على صقل مهاراتك تعلم مع StreamStudent وابدأ مسيرتك المهنية في الوصول إلى النجاح والتركيز على صقل مهاراتك تعلم مع StreamStudent وابدأ مسيرتك المهنية في الوصول إلى النجاح والتركيز على صقل مهاراتك",
+      joinTheFamily: "انضم للعائلة",
     },
   };
   return CONTENT[lang];
@@ -211,8 +217,10 @@ export const formContent = (lang: LanguageType) => {
       Minimum_10_letter: "Minimum 10 letter",
       Maximum_250_letter: "Maximum 250 letter",
       Success: "Success",
-      YourMessageHasBeenSentSuccessfully:
-        "Your Message has been sent Successfully",
+      YourMessageHasBeenSentSuccessfully:"Your Message has been sent Successfully",
+      GetIn: "Get in",
+      touch: "Touch",
+      formSubTitle: "Have questions or need support? Our team of experts is here to help you every step of the way. Contact us today and let us assist you in your educational journey.",
     },
     ar: {
       GetInTouch: "ابقى على تواصل",
@@ -231,6 +239,10 @@ export const formContent = (lang: LanguageType) => {
       Maximum_250_letter: "أقصى 250 رسالة",
       Success: "نجاح",
       YourMessageHasBeenSentSuccessfully: "تم ارسال رسالتك بنجاح",
+      GetIn: "ابقى على ",
+      touch: "تواصل",
+      formSubTitle: "لديك اسئلة او مساعدة؟ سوف نساعدك عليك كل خطوة في مساركك. اتصل بنا اليوم وساعدنا عليك في تعلم مسيرتك",
+
     },
   };
   return CONTENT[lang];
