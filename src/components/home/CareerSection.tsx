@@ -23,9 +23,11 @@ const CareerSection = () => {
         </div>
 
         <div>
-          <button className="btn btn-primary py-[10px] px-[15px]">
-            {careerContent(selectedLanguage).joinTheFamily}
-          </button>
+          <a href="/register">
+            <button className="btn btn-primary py-[10px] px-[15px]" >
+              {careerContent(selectedLanguage).joinTheFamily}
+            </button>
+          </a>
         </div>
       </div>
     </div>
