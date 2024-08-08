@@ -183,69 +183,155 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-inherit sticky z-[999] top-0 bg-white shadow-sm">
-      <article className="hidden lg:block main-container py-2">
+    <nav className="w-full bg-inherit sticky z-[999] top-0 shadow-sm navbar">
+      <article className="hidden lg:block main-container w-full max-w-[100%] m-0 p-0">
         <section className="relative w-full flex justify-between gap-10">
-          <aside className="w-4/5 lg:flex flex-wrap items-center text-base tracking-wide gap-5 font-medium ">
-            {user?.role === "STUDENT" ? (
-              asPath === "/my-account" ? (
-                ""
-              ) : (
-                <Link href="/my-account/my-dashboard">
-                  <div className="bg-primary px-4 py-1 rounded-lg flex gap-1 items-center">
-                    <span>
-                      <Person className="text-white text-sm" />
-                    </span>
-                    <span className="text-white text-sm">
-                      {navbarMenu(selectedLanguage).MyAccount}
-                    </span>
-                  </div>
+          <aside className="w-full lg:flex flex-wrap items-center text-base tracking-wide">
+            <div className="w-full upper-header">
+              <div className="nav-list flex gap-[10px]">
+                <Link href="/">
+                  <p className="flex items-center cursor-pointer hover:text-primary">
+                    {navbarMenu(selectedLanguage).home}
+                  </p>
                 </Link>
-              )
-            ) : (
-              <>
-                <Link href="/register">
-                  <button className="btn-primary w-32 h-10">
-                    {navbarMenu(selectedLanguage).Register}
-                  </button>
+                <Link href="/courses">
+                  <p className="flex items-center cursor-pointer py-5 hover:text-primary">
+                    {navbarMenu(selectedLanguage).Courses}
+                  </p>
                 </Link>
-                <Link href="/login">
-                  <button className="btn-primary w-32 h-10">
-                    {navbarMenu(selectedLanguage).Login}
-                  </button>
+                <Link href="/knowledge-test">
+                  <p className="flex items-center cursor-pointer py-5 hover:text-primary">
+                    {navbarMenu(selectedLanguage).testYourKnowledge}
+                  </p>
                 </Link>
-              </>
-            )}
-            <Link href="/tutors">
-              <p className="flex items-center cursor-pointer hover:text-primary">
-                {navbarMenu(selectedLanguage).Tutor}
-              </p>
-            </Link>
-            <Link href="/courses">
-              <p className="flex items-center cursor-pointer py-5 hover:text-primary">
-                {navbarMenu(selectedLanguage).Courses}
-              </p>
-            </Link>
-            <Link href="/knowledge-test">
-              <p className="flex items-center cursor-pointer py-5 hover:text-primary">
-                {navbarMenu(selectedLanguage).testYourKnowledge}
-              </p>
-            </Link>
-            {/* <CategoryList categoryData={categoryData} /> */}
-            <SearchBar
-              // showLogin={showLogin}
-              searchValue={searchValue}
-              handleSearch={handleSearch}
-              searchIsValidating={searchIsValidating}
-              searchData={searchData}
-            />
-          </aside>
-          <aside className="w-1/5 flex justify-end items-center gap-6 font-medium text-gray-900 ">
-            <Link href="/">
-              <img src="/main_logo.png" alt="main-logo" className="w-52" />
-            </Link>
+              </div>
+              <div className="language-switch">
+                  <Button
+                    id="basic-button"
+                    aria-controls={open ? "basic-menu" : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? "true" : undefined}
+                    onClick={handleClick}
+                  >
+                    <div className="lang flex gap-1">
+                      <span>{selectedLanguage}</span>
+                      <Language className=" cursor-pointer" />
+                    </div>
+                  </Button>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                      "aria-labelledby": "basic-button",
+                    }}
+                  >
+                    <MenuItem onClick={handleClose}>
+                      {" "}
+                      <p
+                        className="flex items-center gap-2 transition-colors duration-200 px-2 py-2 text-normal whitespace-nowrap hover:bg-primary/5"
+                        onClick={() => {
+                          changeLanguage?.("ar");
+                        }}
+                      >
+                        <ICONS.TranslateAR />
+                        {"عربي"}
+                      </p>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      {" "}
+                      <p
+                        className="flex items-center gap-2 transition-colors duration-200 px-2 py-2 text-normal whitespace-nowrap hover:bg-primary/5"
+                        onClick={() => {
+                          changeLanguage?.("en");
+                        }}
+                      >
+                        <ICONS.TranslateEng />
+                        English
+                      </p>
+                    </MenuItem>
+                  </Menu>
+                </div>
+            </div>
+            <div className="w-full lower-header">
+              <div className="left-side">
+                <div className="logo">
+                  <Link href="/">
+                    <img
+                      src="/main_logo.png"
+                      alt="main-logo"
+                      className="w-52"
+                    />
+                  </Link>
+                </div>
 
-            {/* <div className="group">
+                
+                <div className="search">
+                  <SearchBar
+                    // showLogin={showLogin}
+                    searchValue={searchValue}
+                    handleSearch={handleSearch}
+                    searchIsValidating={searchIsValidating}
+                    searchData={searchData}
+                  />
+                </div>
+              </div>
+
+              <div className="right-side">
+                {user?.role === "STUDENT" ? (
+                  asPath === "/my-account" ? (
+                    ""
+                  ) : (
+                    <Link href="/my-account/my-dashboard">
+                      <div className="bg-primary px-4 py-1 rounded-lg flex gap-1 items-center">
+                        <span>
+                          <Person className="text-white text-sm" />
+                        </span>
+                        <span className="text-white text-sm">
+                          {navbarMenu(selectedLanguage).MyAccount}
+                        </span>
+                      </div>
+                    </Link>
+                  )
+                ) : (
+                  <>
+                    <Link href="/register">
+                      <button className="btn btn-secondary w-32 h-10">
+                        {navbarMenu(selectedLanguage).Register}
+                      </button>
+                    </Link>
+                    <Link href="/login">
+                      <button className="btn btn-primary w-32 h-10">
+                        {navbarMenu(selectedLanguage).Login}
+                      </button>
+                    </Link>
+                  </>
+                )}
+              </div>
+            </div>
+            {/* <div className="nav-list">
+              <Link href="/tutors">
+                <p className="flex items-center cursor-pointer hover:text-primary">
+                  {navbarMenu(selectedLanguage).Tutor}
+                </p>
+              </Link>
+              <Link href="/courses">
+                <p className="flex items-center cursor-pointer py-5 hover:text-primary">
+                  {navbarMenu(selectedLanguage).Courses}
+                </p>
+              </Link>
+              <Link href="/knowledge-test">
+                <p className="flex items-center cursor-pointer py-5 hover:text-primary">
+                  {navbarMenu(selectedLanguage).testYourKnowledge}
+                </p>
+              </Link>
+            </div> */}
+            {/* x */}
+            {/* <CategoryList categoryData={categoryData} /> */}
+          </aside>
+          {/* <aside className="w-1/5 flex justify-end items-center gap-6 font-medium text-gray-900 "> */}
+          {/* <div className="group">
               <p className="flex items-center  gap-1  cursor-pointer">
                 <Language className=" cursor-pointer" />
               </p>
@@ -273,52 +359,7 @@ const Navbar = () => {
               </div>
             </div> */}
 
-            <div>
-              <Button
-                id="basic-button"
-                aria-controls={open ? "basic-menu" : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? "true" : undefined}
-                onClick={handleClick}
-              >
-                <Language className=" cursor-pointer" />
-              </Button>
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  "aria-labelledby": "basic-button",
-                }}
-              >
-                <MenuItem onClick={handleClose}>
-                  {" "}
-                  <p
-                    className="flex items-center gap-2 transition-colors duration-200 px-2 py-2 text-normal whitespace-nowrap hover:bg-primary/5"
-                    onClick={() => {
-                      changeLanguage?.("ar");
-                    }}
-                  >
-                    <ICONS.TranslateAR />
-                    {"عربي"}
-                  </p>
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                  {" "}
-                  <p
-                    className="flex items-center gap-2 transition-colors duration-200 px-2 py-2 text-normal whitespace-nowrap hover:bg-primary/5"
-                    onClick={() => {
-                      changeLanguage?.("en");
-                    }}
-                  >
-                    <ICONS.TranslateEng />
-                    English
-                  </p>
-                </MenuItem>
-              </Menu>
-            </div>
-          </aside>
+          {/* </aside> */}
         </section>
       </article>
       <ResponsiveNavbar
@@ -349,15 +390,23 @@ export const SearchBar = ({
   const router = useRouter();
 
   return (
-    <div className="relative lg:w-60 w-full flex justify-between items-center rounded-xl border border-primary bg-white px-1">
+    <div className="relative lg:w-60 w-full flex items-center search-bar bg-white">
+       {/* <Search className="!text-primary" /> */}
+       <div className="search-icon">
+        <svg className="w-[24px] h-[24px]" xmlns="http://www.w3.org/2000/svg" version="1.0" width="72.000000pt" height="73.000000pt" viewBox="0 0 72.000000 73.000000" preserveAspectRatio="xMidYMid meet">
+          <g transform="translate(0.000000,73.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+          <path d="M258 636 c-26 -7 -55 -19 -65 -26 -108 -82 -146 -186 -111 -302 15 -50 78 -122 132 -151 63 -33 165 -31 230 6 l50 28 67 -67 c61 -60 89 -73 89 -41 0 6 -28 39 -61 73 l-62 62 27 53 c20 40 26 68 26 116 0 77 -15 117 -67 173 -64 72 -164 102 -255 76z m157 -55 c205 -93 137 -404 -88 -404 -119 0 -217 99 -217 218 0 38 40 123 71 152 58 53 160 68 234 34z"/>
+          </g>
+          </svg>
+       </div>
       <input
         type="search"
         value={searchValue}
         onChange={handleSearch}
-        className="p-2 rounded-xl outline-none"
+        className="p-2  outline-none search-input"
         placeholder={navbarMenu(selectedLanguage).placeholder}
       />
-      <Search className="!text-primary" />
+     
       {searchValue && (
         <section className="absolute z-[999] top-12 left-0 min-h-[35vh] h-[35vh] w-[35rem] border border-[#04977d] rounded-md overflow-y-scroll bg-white">
           <div className="flex flex-col gap-4 px-6 py-4">

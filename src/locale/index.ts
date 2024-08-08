@@ -9,19 +9,21 @@ export const navbarMenu = (lang: LanguageType) => {
       Register: "Register",
       Login: "Login",
       Tutor: "Tutor",
+      home: "Home",
       Courses: "Courses",
       testYourKnowledge: "Test Your Knowledge",
       MyAccount: "My Account",
-      placeholder: "Type Courses...",
+      placeholder: "What do you want learn...",
     },
     ar: {
       MyAccount: "حسابي",
       Register: "يسجل",
       Login: "تسجيل الدخول",
       Tutor: "مدرس خاص",
+      home: "الرئيسية",
       Courses: "الدورات",
       testYourKnowledge: "اختبر معلوماتك",
-      placeholder: "اكتب الدورات ...",
+      placeholder: "ماذا تريد أن تتعلم...",
     },
   };
   return CONTENT[lang];
@@ -33,21 +35,19 @@ export const heroContent = (lang: LanguageType) => {
     en: {
       heroTitle: "Make Your Dream Career With",
       highlightedText: "Stream Student",
-      heroDescription:
-        "Learn and study your lessons from home by enrolling in various lessons.",
+      heroDescription:"Learn and study your lessons from home by enrolling in various lessons.",
       testPageTitle: "Elevate Your Knowledge with Engaging Quizzes",
       testPagehighlightedText: "and Assessments",
-      testPageDesc:
-        "Challenge yourself with our thoughtfully crafted quizzes covering a wide range of topics. Reinforce your learning, identify areas for improvement, and enhance your understanding through interactive assessments.",
+      testPageDesc:"Challenge yourself with our thoughtfully crafted quizzes covering a wide range of topics. Reinforce your learning, identify areas for improvement, and enhance your understanding through interactive assessments.",
       testPageQuizSecTitle: "Now Test Your Knowledge!",
-      testPageQuizSecDesc:
-        "Choose a quiz below and dive into a rewarding learning experience. Test your comprehension, critical thinking, and problem-solving skills. Unleash your potential and discover new insights through our dynamic quizzes.",
+      testPageQuizSecDesc:"Choose a quiz below and dive into a rewarding learning experience. Test your comprehension, critical thinking, and problem-solving skills. Unleash your potential and discover new insights through our dynamic quizzes.",
+      getStarted: "Get Started",
     },
     ar: {
       heroTitle: "اجعل مهنة أحلامك مع",
       highlightedText: "تيار الطالب",
       heroDescription:
-        "تعلم ودراسة دروسك من المنزل من خلال التسجيل في دروس مختلفة.",
+        "تعلم و ادرس دروسك من المنزل من خلال التسجيل في دروس مختلفة.",
       testPageTitle: "ارتقِ بمعرفتك من خلال اختبارات شيقة",
       testPagehighlightedText: "وتقييمات",
       testPageDesc:
@@ -55,6 +55,7 @@ export const heroContent = (lang: LanguageType) => {
       testPageQuizSecTitle: "الآن اختبر معرفتك!",
       testPageQuizSecDesc:
         "اختر اختبارًا أدناه وانغمس في تجربة تعلُّم مجزية. اختبر فهمك، ومهارات التفكير النقدي، ومهارات حل المشكلات. أطلِق إمكانياتك واكتشف رؤى جديدة من خلال اختباراتنا الديناميكية.",
+      getStarted: "ابدأ الآن",
     },
   };
   return CONTENT[lang];
@@ -159,16 +160,22 @@ export const profileSectionContent = (lang: LanguageType) => {
 export const careerContent = (lang: LanguageType) => {
   const CONTENT = {
     en: {
+      reserveYourSpot: "Reserve Your Spot Now!",
       careerTitle: "Reserve your spot",
       careerDescription:
         "Learn with StreamStudent and start your career in reaching success and focus on honing your skills",
       GetStartedButton: "Get started",
+      reserveYourSpotDescription: "Learn with StreamStudent and start your career in reaching success and focus on honing your skills Learn with StreamStudent and start your career in reaching success and focus on honing your skillsLearn with StreamStudent and start your career in reaching success and focus on honing your skills",
+      joinTheFamily: "Join the family", 
     },
     ar: {
+      reserveYourSpot: "احجز مكانك الان",
       careerTitle: "احجز مكانك",
       careerDescription:
         "تعلم مع Streamstudent وابدأ حياتك المهنية في الوصول إلى النجاح والتركيز على شحذ مهاراتك",
       GetStartedButton: "البدء",
+      reserveYourSpotDescription: "تعلم مع StreamStudent وابدأ مسيرتك المهنية في الوصول إلى النجاح والتركيز على صقل مهاراتك تعلم مع StreamStudent وابدأ مسيرتك المهنية في الوصول إلى النجاح والتركيز على صقل مهاراتك تعلم مع StreamStudent وابدأ مسيرتك المهنية في الوصول إلى النجاح والتركيز على صقل مهاراتك",
+      joinTheFamily: "انضم للعائلة",
     },
   };
   return CONTENT[lang];
@@ -210,8 +217,10 @@ export const formContent = (lang: LanguageType) => {
       Minimum_10_letter: "Minimum 10 letter",
       Maximum_250_letter: "Maximum 250 letter",
       Success: "Success",
-      YourMessageHasBeenSentSuccessfully:
-        "Your Message has been sent Successfully",
+      YourMessageHasBeenSentSuccessfully:"Your Message has been sent Successfully",
+      GetIn: "Get in",
+      touch: "Touch",
+      formSubTitle: "Have questions or need support? Our team of experts is here to help you every step of the way. Contact us today and let us assist you in your educational journey.",
     },
     ar: {
       GetInTouch: "ابقى على تواصل",
@@ -230,6 +239,10 @@ export const formContent = (lang: LanguageType) => {
       Maximum_250_letter: "أقصى 250 رسالة",
       Success: "نجاح",
       YourMessageHasBeenSentSuccessfully: "تم ارسال رسالتك بنجاح",
+      GetIn: "ابقى على ",
+      touch: "تواصل",
+      formSubTitle: "لديك اسئلة او مساعدة؟ سوف نساعدك عليك كل خطوة في مساركك. اتصل بنا اليوم وساعدنا عليك في تعلم مسيرتك",
+
     },
   };
   return CONTENT[lang];

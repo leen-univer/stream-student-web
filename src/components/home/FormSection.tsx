@@ -63,14 +63,16 @@ const FormSection = () => {
   });
   return (
     <article className="main-container py-20">
-      <section className="flex lg:flex-row flex-col-reverse gap-8 py-12 rounded-md shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] p-8">
+      <section className="flex lg:flex-row flex-col-reverse gap-8 py-12 rounded-md p-8">
         <aside className="w-full">
-          <h1 className="pb-5 text-2xl font-semibold md:text-4xl">
-            {formContent(selectedLanguage).GetInTouch}
+          <h1 className="pb-5 text-2xl font-semibold font-inter md:text-4xl">
+            {formContent(selectedLanguage).GetIn}
+            <span className="text-primary mx-2">{formContent(selectedLanguage).touch}</span>
           </h1>
+          <p className="text-[#6D737A] text-[18px] mb-[30px]">{formContent(selectedLanguage).formSubTitle}</p>
           <form onSubmit={formik.handleSubmit} className="flex flex-col gap-2">
             <div className="w-full">
-              <p className="tracking-wider font-semibold pb-2">
+              <p className="tracking-wider text-[16px] font-sans pb-2">
                 {formContent(selectedLanguage).EnterYourName}
               </p>
               <TextField
@@ -88,13 +90,13 @@ const FormSection = () => {
                 InputProps={{
                   classes: {
                     notchedOutline: "notchedOutline",
-                    input: "input-field",
+                    input: "input-field px-[20px]",
                   },
                 }}
               />
             </div>
             <div className="w-full">
-              <p className="tracking-wider font-semibold pb-2">
+              <p className="tracking-wider text-[16px] font-sans pb-2">
                 {" "}
                 {formContent(selectedLanguage).EnterEmail}
               </p>
@@ -113,7 +115,7 @@ const FormSection = () => {
                 InputProps={{
                   classes: {
                     notchedOutline: "notchedOutline",
-                    input: "input-field",
+                    input: "input-field px-[20px]",
                   },
                 }}
               />
@@ -141,7 +143,7 @@ const FormSection = () => {
               />
             </div> */}
             <div className="w-full">
-              <p className="tracking-wider font-semibold pb-2">
+              <p className="tracking-wider text-[16px] font-sans pb-2">
                 {formContent(selectedLanguage).Message}
               </p>
               <TextField
@@ -161,7 +163,7 @@ const FormSection = () => {
                 InputProps={{
                   classes: {
                     notchedOutline: "notchedOutline",
-                    input: "input-field",
+                    input: "input-field ",
                   },
                 }}
               />
@@ -174,17 +176,17 @@ const FormSection = () => {
                 disabled={formik.isSubmitting || !formik.isValid}
                 loading={formik.isSubmitting}
                 loadingPosition="end"
-                endIcon={
-                  <East className="group-hover:translate-x-3 common-transition" />
-                }
-                className={`!bg-primary group !tracking-wider !uppercase !text-white !font-medium !w-52 !h-12 !rounded-lg hover:focus:!border-none disabled:!cursor-not-allowed disabled:!bg-gray-400`}
+                // endIcon={
+                //   <East className="group-hover:translate-x-3 common-transition" />
+                // }
+                className={`btn btn-primary w-[200px]`}
               >
                 {formContent(selectedLanguage).SendMessage}
               </LoadingButton>
             </div>
           </form>
         </aside>
-        <img className="w-full" src="/home/contact_img.png" alt="support" />
+        <img className="xl:w-[670px] lg:w-[450px]" src="/Image/get-in-touch.png" alt="support" />
       </section>
     </article>
   );
