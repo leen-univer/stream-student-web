@@ -36,23 +36,18 @@ const Register = () => {
       title="Register | StreamStudent"
       footerBgColor="bg-primary/20"
     >
-      <main className="bg-primary/20 flex justify-center items-center py-10 md:py-20">
-        <article className="main-container">
-          <section className="h-full grid grid-cols-1 lg:grid-cols-2 rounded-3xl bg-white overflow-hidden">
-            <aside className="hidden w-full lg:grid place-items-center h-full bg-primary/5">
-              <img
-                className="w-full"
-                src="/home/register.png"
-                alt="form-image"
-              />
-            </aside>
-            <aside className="w-full h-full rounded-3xl flex flex-col">
-              <div className="border-b-2 border-primary">
-                <p className="title-styling text-center p-4">
+      <main className="login-page-container flex justify-center items-center py-10 md:py-20"
+      style={
+        {backgroundImage:" url('/Image/registerImage.jpeg')"}
+      }>
+        <article className="main-container ">
+          <section className="h-full flex items-center justify-center rounded-3xl ">
+            <aside className="login-form py-[50px] w-full items-center content-center justify-center rounded-3xl">
+              <div className="w-full flex flex-col items-center  gap-4">
+                <p className="title-styling text-white text-center p-4">
                   {registerContent(selectedLanguage).CreateAccount}
                 </p>
-                <div className="flex items-center justify-center gap-4 font-semibold pb-4">
-                  <span>{registerContent(selectedLanguage).me}</span>
+                <div className="flex items-center justify-center gap-4 font-semibold pb-4 text-white">
                   <RadioGroup
                     row
                     aria-labelledby="demo-controlled-radio-buttons-group"
@@ -317,7 +312,7 @@ const TutorRegisterForm = () => {
         {(formik) => (
           <Form className="w-full flex flex-col gap-4 edit-lead-form">
             {TUTOR_REGISTRATION_ARR.map((inputItem) => (
-              <Field name={inputItem.name} key={inputItem.key}>
+              <Field name={inputItem.name} key={inputItem.key} >
                 {(props: {
                   meta: { touched: any; error: any };
                   field: JSX.IntrinsicAttributes & TextFieldProps & SelectProps;
@@ -330,8 +325,8 @@ const TutorRegisterForm = () => {
                           <span className="pl-1 text-gray-500">*</span>
                         </p>
                         <CountrySelector
-                          countryDetails={countryDetails}
-                          setCountryDetails={setCountryDetails}
+                        countryDetails={countryDetails}
+                        setCountryDetails={setCountryDetails}
                         />
                       </div>
                     );
@@ -345,7 +340,8 @@ const TutorRegisterForm = () => {
                             fullWidth
                             label={inputItem.label}
                             id="standard-basic"
-                            variant="standard"
+                            variant="outlined"
+                            className="outline-input"
                             required={inputItem?.required}
                             name={inputItem.name}
                             value={formik.values[inputItem.name]}
@@ -386,7 +382,8 @@ const TutorRegisterForm = () => {
                           }`}
                           name={inputItem.name}
                           id="standard-basic"
-                          variant="standard"
+                          variant="outlined"
+                          className="outline-input"
                           InputProps={{
                             endAdornment: (
                               <InputAdornment position="end">
@@ -427,7 +424,8 @@ const TutorRegisterForm = () => {
                         fullWidth
                         label={inputItem.label}
                         id="standard-basic"
-                        variant="standard"
+                        variant="outlined"
+                        className="outline-input"
                         required={inputItem?.required}
                         type={inputItem.type}
                         error={Boolean(props.meta.touched && props.meta.error)}
@@ -447,16 +445,8 @@ const TutorRegisterForm = () => {
                 }}
               </Field>
             ))}
-            <p className="text-center tracking-wide py-1">
-              {registerContent(selectedLanguage).haveAnAccount}{" "}
-              <Link href="/login">
-                <span className="text-blue-600 hover:underline cursor-pointer text-right common-transition">
-                  {registerContent(selectedLanguage).login}
-                </span>
-              </Link>{" "}
-              {registerContent(selectedLanguage).now}
-            </p>
-            <div className="w-full flex justify-center items-center">
+     
+            <div className="w-full flex justify-center items-center mt-[30px]">
               <LoadingButton
                 fullWidth
                 type="submit"
@@ -466,11 +456,20 @@ const TutorRegisterForm = () => {
                 endIcon={
                   <East className="common-transition group-hover:translate-x-2" />
                 }
-                className={`group !rounded-lg !bg-primary !h-10 !w-36 !text-base !capitalize !tracking-wide !text-white hover:focus:!border-none disabled:!cursor-not-allowed  disabled:!bg-gray-300`}
+                className="btn btn-primary w-[200px]"
               >
                 {registerContent(selectedLanguage).Register}
               </LoadingButton>
             </div>
+            <p className="text-center text-gray-200 tracking-wide py-1">
+              {registerContent(selectedLanguage).haveAnAccount}{" "}
+              <Link href="/login">
+                <span className="text-white font-semibold hover:underline cursor-pointer text-right common-transition">
+                  {registerContent(selectedLanguage).login}
+                </span>
+              </Link>{" "}
+              {registerContent(selectedLanguage).now}
+            </p>
           </Form>
         )}
       </Formik>
@@ -694,7 +693,8 @@ const StudentRegisterForm = () => {
                             fullWidth
                             label={inputItem.label}
                             id="standard-basic"
-                            variant="standard"
+                            variant="outlined"
+                            className="outline-input"
                             required={inputItem?.required}
                             name={inputItem.name}
                             value={formik.values[inputItem.name]}
@@ -738,7 +738,8 @@ const StudentRegisterForm = () => {
                           }`}
                           name={inputItem.name}
                           id="standard-basic"
-                          variant="standard"
+                          variant="outlined"
+                          className="outline-input"
                           InputProps={{
                             endAdornment: (
                               <InputAdornment position="end">
@@ -780,7 +781,8 @@ const StudentRegisterForm = () => {
                         fullWidth
                         label={inputItem.label}
                         id="standard-basic"
-                        variant="standard"
+                        variant="outlined"
+                        className="outline-input"
                         required={inputItem?.required}
                         type={inputItem.type}
                         error={Boolean(props.meta.touched && props.meta.error)}
@@ -800,7 +802,7 @@ const StudentRegisterForm = () => {
                 }}
               </Field>
             ))}
-            <div className="w-full flex justify-center items-center">
+            <div className="w-full flex justify-center items-center mt-[30px]">
               <LoadingButton
                 fullWidth
                 type="submit"
@@ -810,7 +812,7 @@ const StudentRegisterForm = () => {
                 endIcon={
                   <East className="common-transition group-hover:translate-x-2" />
                 }
-                className={`group !rounded-lg !bg-primary !h-10 !w-36 !text-base !capitalize !tracking-wide !text-white hover:focus:!border-none disabled:!cursor-not-allowed  disabled:!bg-gray-300`}
+                className="btn btn-primary w-[200px]"
               >
                 {registerContent(selectedLanguage).Register}
               </LoadingButton>

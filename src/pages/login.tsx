@@ -130,26 +130,25 @@ const Login = () => {
 
   return (
     <PublicLayout title="Login | StreamStudent" footerBgColor="bg-primary/20">
-      <article className="bg-primary/20 py-20">
+      <article className="login-page-container py-20" 
+        style={
+          {backgroundImage:" url('/Image/loginBG.jpeg')"}
+        }>
         <section className="main-container grid place-items-center">
-          <aside className="w-full lg:w-4/5 flex items-center justify-between bg-white rounded-3xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] overflow-hidden">
-            <div className="hidden md:block w-full lg:w-3/5 bg-primary/5">
-              <img src="/home/login.png" alt="login" className="w-full h-3/5" />
-            </div>
-            <div className="w-full lg:w-2/5 bg-white p-6 md:p-12 flex flex-col gap-4">
+          <aside className="w-full flex items-center content-center justify-center rounded-3xl  overflow-hidden">
+            <div className="login-form py-[70px] w-full flex flex-col items-center  gap-4">
+
+              <div className="flex flex-col gap-4 lg:w-[60%] md:  md:w-[70%] sm:w-[70%]">
               <div className="flex flex-col items-center gap-4 text-center">
-                <h6 className="title-styling text-primary">
+                <h6 className="title-styling text-white">
                   {loginContent(selectedLanguage).Login}
                 </h6>
-                <p>{loginContent(selectedLanguage).Description}</p>
+                <p className="text-white text-[14px] font-[300]">{loginContent(selectedLanguage).Description}</p>
               </div>
 
-              <form onSubmit={formik.handleSubmit} className="w-full">
+              <form onSubmit={formik.handleSubmit} className="w-full text-white">
                 <aside className="flex flex-col gap-3 pt">
                   <div className="flex flex-col items-center gap-1 pb-6">
-                    <p className="text-xl font-medium">
-                      {loginContent(selectedLanguage).LoginAs}
-                    </p>
                     <div className="flex items-center justify-center gap-4 font-semibold">
                       <RadioGroup
                         row
@@ -178,8 +177,8 @@ const Login = () => {
                       type="email"
                       name="email"
                       id="standard-basic"
-                      variant="standard"
-                      className=""
+                      variant="outlined"
+                      className="outlined-input"
                       value={formik.values.email}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
@@ -205,7 +204,8 @@ const Login = () => {
                       type={`${isShow ? "text" : "password"}`}
                       name="password"
                       id="standard-basic"
-                      variant="standard"
+                      variant="outlined"
+                      className="outlined-input"
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
@@ -240,19 +240,11 @@ const Login = () => {
                     />
                   </div>
                   <Link href="/forgot-password">
-                    <p className="text-blue-600 hover:underline cursor-pointer text-right common-transition text-sm">
+                    <p className="text-white hover:underline cursor-pointer text-right common-transition text-sm">
                       {loginContent(selectedLanguage).ForgotPassword}
                     </p>
                   </Link>
-                  <p className="text-center text-sm tracking-wide">
-                    {loginContent(selectedLanguage).AlreadyHavingAccount}{" "}
-                    <Link href="/register">
-                      <span className="text-blue-600 hover:underline cursor-pointer text-right common-transition">
-                        {loginContent(selectedLanguage).register}
-                      </span>
-                    </Link>{" "}
-                    {loginContent(selectedLanguage).now}
-                  </p>
+                
 
                   <div className="w-full flex justify-center items-center">
                     <LoadingButton
@@ -264,13 +256,23 @@ const Login = () => {
                       endIcon={
                         <East className="common-transition group-hover:translate-x-2" />
                       }
-                      className={`group !rounded-lg !bg-primary !h-10 !w-36 !text-base !capitalize !tracking-wide !text-white hover:focus:!border-none disabled:!cursor-not-allowed  disabled:!bg-gray-300`}
+                      className="btn btn-primary w-[200px] mt-[30px]"
                     >
                       {loginContent(selectedLanguage).login}
                     </LoadingButton>
                   </div>
+                  <p className="text-center text-gray-200 text-sm tracking-wide">
+                    {loginContent(selectedLanguage).AlreadyHavingAccount}{" "}
+                    <Link href="/register">
+                      <span className="text-white font-semibold hover:underline cursor-pointer text-right common-transition">
+                        {loginContent(selectedLanguage).register}
+                      </span>
+                    </Link>{" "}
+                    {loginContent(selectedLanguage).now}
+                  </p>
                 </aside>
               </form>
+              </div>
             </div>
           </aside>
         </section>

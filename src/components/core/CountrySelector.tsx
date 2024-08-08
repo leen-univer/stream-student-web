@@ -21,7 +21,7 @@ const CountrySelector: React.FC<Props> = ({
 }) => {
   return (
     <Autocomplete
-      id="country-select-demo"
+      id="country-select"
       sx={{ width: "100%" }}
       options={COUNTRIES}
       autoHighlight
@@ -56,7 +56,8 @@ const CountrySelector: React.FC<Props> = ({
       renderInput={(params) => (
         <TextField
           {...params}
-          variant="standard"
+          variant="outlined"
+          className="outlined-input"
           placeholder="Country"
           sx={{
             backgroundColor: "white",
